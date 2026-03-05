@@ -40,7 +40,8 @@ function GetQustions() {
         setTimeout(() => {
           CurrentIndex++;
 
-        if (CurrentIndex < questionsCount) {
+        if (CurrentIndex < questionsCount) 
+        {
 
         quizArea.innerHTML = "";
         answerArea.innerHTML = "";
@@ -48,10 +49,11 @@ function GetQustions() {
         addQustionData(questionsObject[CurrentIndex], questionsCount);
         handleBullets();
 
-      } else {
-       
+      } 
+      else 
+        {
         showResults(questionsCount);
-      }
+        }
 
         }, 500);
         
@@ -96,11 +98,10 @@ function addQustionData(obj, count) {
 document.addEventListener("DOMContentLoaded", function () {
 answerArea.addEventListener("click", function (e) {
 
-  let clickedLabel = e.target.closest(".answer");
+    let clickedLabel = e.target.closest(".answer");
 
-  if (clickedLabel) {
+    if (clickedLabel) {
 
-    // امسح active من الكل
     document.querySelectorAll(".answer").forEach(label => {
       label.classList.remove("active");
       label.parentElement.classList.remove("active");
@@ -108,7 +109,6 @@ answerArea.addEventListener("click", function (e) {
       if (span) span.classList.remove("active");
     });
 
-    // ضيف active للي اتضغط عليه
     clickedLabel.classList.add("active");
     clickedLabel.parentElement.classList.add("active");
 
